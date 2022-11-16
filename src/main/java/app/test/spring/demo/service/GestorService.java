@@ -44,4 +44,12 @@ public class GestorService {
 		}
 	}
 
+	public Optional<Gestor> obtenerConCorreo(String email) {
+		return this.gestorRepository.findByEmail(email);
+	}
+
+	public Optional<Gestor> obtenerPorLogin(String email, String pass) {
+		return this.gestorRepository.findOneByEmailAndPassword(email, pass);
+	}
+
 }
